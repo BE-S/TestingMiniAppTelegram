@@ -3,6 +3,6 @@
     <title>TestingMiniAppTelegram</title>
 </head>
 <body>
-    Hi everyone
+    Hi everyone php
 </body>
 </html>
