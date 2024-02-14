@@ -70,10 +70,10 @@
     $(".btn").on("click", function() {
         if (tg.MainButton.isVisible) {
             tg.MainButton.hide();
-            tg.sendData(item);
         } else {
             tg.MainButton.setText("Я ТУТАЧКИ");
-            item = $(".btn").data('item')
+            item = $(".btn").data('item');
+            tg.sendData(item);
             tg.MainButton.show();
         }
     })
