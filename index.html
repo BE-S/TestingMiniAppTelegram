@@ -18,7 +18,7 @@
         <div class="item">
             <img src="1.png" alt="Бургер" class="img">
             <p class="price">59.99$</p>
-            <button class="btn" data-item='{price: "59.99"}'>Купить</button>
+            <button class="btn" data-price='59.99'>Купить</button>
         </div>
         <div class="item">
             <img src="1.png" alt="Бургер" class="img">
@@ -48,7 +48,7 @@
         <div class="item">
             <img src="1.png" alt="Бургер" class="img">
             <p class="price">32.00$</p>
-            <button class="btn" data-item="{price: "32.00}>Купить</button>
+            <button class="btn" data-item='{price: "32.00"}'>Купить</button>
         </div><div class="item">
             <img src="1.png" alt="Бургер" class="img">
             <p class="price">39.99$</p>
@@ -70,7 +70,7 @@
     $(".btn").on("click", function() {
         if (tg.MainButton.isVisible) {
             tg.MainButton.hide();
-            tg.sendData(item)
+            tg.sendData(item);
         } else {
             tg.MainButton.setText("Я ТУТАЧКИ");
             item = $(".btn").data('item')
