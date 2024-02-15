@@ -73,9 +73,12 @@
         } else {
             tg.MainButton.setText("Я ТУТАЧКИ");
             item = $(".btn").data('item');
-            tg.sendData(item);
             tg.MainButton.show();
         }
+    })
+
+    Telegram.WebApp.onEvent("mainButtonClicked", function () {
+        tg.sendData(item);
     })
 </script>
 </body>
