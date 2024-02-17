@@ -73,14 +73,12 @@
             tg.MainButton.setText("Я ТУТАЧКИ");
             item = 1;
             tg.MainButton.show();
-            $(".logo").append("Нажал");
-            tg.sendData(item);
         }
+        Telegram.WebApp.sendData('Ваши данные для отправки');
     })
 
     Telegram.WebApp.onEvent("mainButtonClicked", function () {
         tg.sendData(item);
-        $(".logo").append("Нажал2");
     })
 </script>
 </body>
