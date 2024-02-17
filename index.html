@@ -1,6 +1,6 @@
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta charSet="utf-8">
 
     <title>TestingMiniAppTelegram</title>
 
@@ -11,73 +11,74 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="logo">
+<div className="container">
+    <div className="logo">
         BE-S
     </div>
-    <div class="inner">
-        <div class="item">
-            <img src="1.png" alt="Бургер" class="img">
-            <p class="price">59.99$</p>
-            <button class="btn" data-price='59.99'>Купить</button>
+    <div className="inner">
+        <div className="item">
+            <img src="1.png" alt="Бургер" className="img">
+            <p className="price">59.99$</p>
+            <button className="btn" data-price='59.99'>Купить</button>
         </div>
-        <div class="item">
-            <img src="1.png" alt="Бургер" class="img">
-            <p class="price">8.45$</p>
-            <button class="btn" data-item='{price: "8.45"}'>Купить</button>
+        <div className="item">
+            <img src="1.png" alt="Бургер" className="img">
+            <p className="price">8.45$</p>
+            <button className="btn" data-price='{"8.45"}'>Купить</button>
         </div>
-        <div class="item">
-            <img src="1.png" alt="Бургер" class="img">
-            <p class="price">19.50$</p>
-            <button class="btn" data-item='{price: "19.50"}'>Купить</button>
+        <div className="item">
+            <img src="1.png" alt="Бургер" className="img">
+            <p className="price">19.50$</p>
+            <button className="btn" data-price='{"19.50"}'>Купить</button>
         </div>
-        <div class="item">
-            <img src="1.png" alt="Бургер" class="img">
-            <p class="price">10.99$</p>
-            <button class="btn" data-item='{price: "10.99"}'>Купить</button>
+        <div className="item">
+            <img src="1.png" alt="Бургер" className="img">
+            <p className="price">10.99$</p>
+            <button className="btn" data-price='{"10.99"}'>Купить</button>
         </div>
-        <div class="item">
-            <img src="1.png" alt="Бургер" class="img">
-            <p class="price">9.99$</p>
-            <button class="btn" data-item='{price: "9.99"}'>Купить</button>
+        <div className="item">
+            <img src="1.png" alt="Бургер" className="img">
+            <p className="price">9.99$</p>
+            <button className="btn" data-price='{"9.99"}'>Купить</button>
         </div>
-        <div class="item">
-            <img src="1.png" alt="Бургер" class="img">
-            <p class="price">14.70$</p>
-            <button class="btn" data-item='{price: "14.70"}'>Купить</button>
+        <div className="item">
+            <img src="1.png" alt="Бургер" className="img">
+            <p className="price">14.70$</p>
+            <button className="btn" data-price='{"14.70"}'>Купить</button>
         </div>
-        <div class="item">
-            <img src="1.png" alt="Бургер" class="img">
-            <p class="price">32.00$</p>
-            <button class="btn" data-item='{price: "32.00"}'>Купить</button>
-        </div><div class="item">
-        <img src="1.png" alt="Бургер" class="img">
-        <p class="price">39.99$</p>
-        <button class="btn" data-item='{price: "39.99"}'>Купить</button>
-    </div>
+        <div className="item">
+            <img src="1.png" alt="Бургер" className="img">
+            <p className="price">32.00$</p>
+            <button className="btn" data-price='{"32.00"}'>Купить</button>
+        </div>
+        <div className="item">
+            <img src="1.png" alt="Бургер" className="img">
+            <p className="price">39.99$</p>
+            <button className="btn" data-price='{"39.99"}'>Купить</button>
+        </div>
     </div>
 </div>
 
-<div class="pressed" style="color: white"></div>
+<div className="pressed" style="color: white"></div>
 
 <script>
     let tg = window.Telegram.WebApp;
-    let item;
+    let price;
 
     tg.expand();
 
-    $(".btn").on("click", function() {
+    $(".btn").on("click", function () {
         if (tg.MainButton.isVisible) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.setText("Я ТУТАЧКИ");
-            item = 1;
+            price = $(".btn").data("price")
             tg.MainButton.show();
         }
     })
 
     Telegram.WebApp.onEvent("mainButtonClicked", function () {
-        Telegram.WebApp.sendData(1);
+        Telegram.WebApp.sendData(price);
     })
 </script>
 </body>
