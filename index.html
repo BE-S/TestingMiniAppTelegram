@@ -74,11 +74,10 @@
             item = 1;
             tg.MainButton.show();
         }
-        Telegram.WebApp.sendData('Ваши данные для отправки');
     })
 
     Telegram.WebApp.onEvent("mainButtonClicked", function () {
-        tg.sendData(item);
+        Telegram.WebApp.sendData('Ваши данные для отправки');
     })
 </script>
 </body>
