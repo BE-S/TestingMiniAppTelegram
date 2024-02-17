@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="index.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
 
@@ -59,22 +60,18 @@
 
 <div class="pressed" style="color: white"></div>
 
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-
 <script>
     let tg = window.Telegram.WebApp;
     let item;
 
     tg.expand();
 
-    tg.colorScheme = "light";
-
     $(".btn").on("click", function() {
         if (tg.MainButton.isVisible) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.setText("Я ТУТАЧКИ");
-            item = 1
+            item = 1;
             tg.MainButton.show();
             $(".logo").append("Нажал");
             tg.sendData(item);
